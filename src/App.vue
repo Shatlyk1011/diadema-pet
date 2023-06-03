@@ -1,7 +1,31 @@
 <template>
-  <div>hello world</div>
+  <Nav />
+  <p>
+    {{ isDark }}
+    <button @click="toggleDark()">toggle</button>
+  </p>
+  <router-view />
 </template>
 
-<script setup></script>
+<script setup>
+import Nav from "@/components/Nav.vue"
+import { useDark, useToggle } from "@vueuse/core"
 
-<style lang="scss" scoped></style>
+const isDark = useDark({
+  selector: "body",
+})
+const toggleDark = useToggle(isDark)
+</script>
+
+<style lang="scss" scoped>
+p {
+  height: 20px;
+  width: 20px;
+  position: fixed;
+  // width: 100%;
+  top: 0;
+  right: 0;
+  padding: 5rem;
+  z-index: 999;
+}
+</style>

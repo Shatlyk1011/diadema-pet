@@ -5,9 +5,12 @@ $color-black-9: rgba($color-black, 0.9);
 $color-main: #deac7c;
 
 $color-gray-1: #e5e5e5;
-$color-gray-2: #999999;
+$color-gray-2: #8d8d8d;
 
 $color-red: #ff254e;
+
+$ff-mserrat: "Montserrat", sans-serif;
+$ff-garamond: "EB Garamond", serif;
 
 *,
 *:before,
@@ -19,13 +22,17 @@ $color-red: #ff254e;
 
 html {
   font-size: 62.5%;
-  font-family: "Montserrat", sans-serif;
+  font-family: $ff-mserrat;
   box-sizing: border-box;
 }
 
 body {
   font-size: 1.6rem;
   color: $color-black;
+
+  /*   &.dark {
+    color: $color-gray-1;
+  } */
 }
 
 ul {
