@@ -39,6 +39,9 @@ ul {
   list-style: none;
 }
 
+.align-center {
+  text-align: center;
+}
 /* @mixin respond($breakpoint) {
   @if $breakpoint == smallest {
     @media only screen and (max-width: 27.5em) {
