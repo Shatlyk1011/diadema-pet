@@ -27,7 +27,7 @@
 
 .section-hero {
   height: 100%;
-  background: $color-gray-1;
+  background: $bg-white;
   position: relative;
 
   .dark & {

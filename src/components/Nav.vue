@@ -35,7 +35,7 @@
 
 header {
   padding: 5rem 15rem;
-  background-color: $color-gray-1;
+  background-color: $bg-white;
 
   .nav {
     display: flex;

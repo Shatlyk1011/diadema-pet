@@ -7,11 +7,11 @@
           <img :src="arrival.imgUrl" alt="" />
         </div>
         <h4>{{ arrival.title }}</h4>
-        <p>{{ arrival.price }}</p>
+        <p>usd {{ arrival.price }}</p>
       </div>
     </div>
 
-    <!-- <div class="show-all">Показать все</div> -->
+    <div class="show-all">Показать все</div>
   </section>
 </template>
 
@@ -19,7 +19,7 @@
 const arrivals = [
   {
     imgUrl:
-      "https://img.freepik.com/free-photo/white-training-sneakers-unisex-sportswear-fashion-shoot_53876-104311.jpg?w=826&t=st=1685812279~exp=1685812879~hmac=491ba7440b593eca39328da353781a421b96f2307215a4297674538dd8c0276a",
+      "https://images.unsplash.com/photo-1605733513597-a8f8341084e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1229&q=80",
     title: "Стиль из истории",
     price: 200,
   },
@@ -60,7 +60,7 @@ const arrivals = [
 @import "@/globals";
 .section-arrivals {
   background-color: $color-white;
-  padding: 11rem 5rem 8rem;
+  padding: 11rem 5rem 0;
 
   h3 {
     font-family: $ff-garamond;
@@ -75,6 +75,7 @@ const arrivals = [
     margin: 0 auto;
     column-gap: 4.5rem;
     row-gap: 8rem;
+    margin-top: 5rem;
 
     .wrap {
       display: flex;
@@ -105,11 +106,21 @@ const arrivals = [
       p {
         font-size: 1.4rem;
         color: $color-gray-2;
+        margin-top: 1rem;
+        text-transform: uppercase;
       }
     }
   }
 
   .show-all {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: $color-gray-2;
+    padding: 1.6rem 0;
+    border-top: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    max-width: 114rem;
+    margin: 7rem auto;
   }
 }
 </style>
