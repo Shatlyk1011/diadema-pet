@@ -5,10 +5,12 @@
     <button @click="toggleDark()">toggle</button>
   </p>
   <router-view />
+  <Footer />
 </template>
 
 <script setup>
 import Nav from "@/components/Nav.vue"
+import Footer from "@/components/Footer.vue"
 import { useDark, useToggle } from "@vueuse/core"
 
 const isDark = useDark({
