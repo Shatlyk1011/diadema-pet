@@ -29,9 +29,10 @@
   height: 100%;
   background: $bg-white;
   position: relative;
+  margin-top: -1px;
 
   .dark & {
-    background: red;
+    background-color: $color-black;
   }
   .hero {
     display: grid;
@@ -49,6 +50,9 @@
       h1 {
         font-family: $ff-garamond;
         font-size: 6rem;
+        .dark & {
+          color: $color-main;
+        }
       }
 
       p {
@@ -71,6 +75,20 @@
           letter-spacing: 0.2px;
           text-transform: uppercase;
           color: inherit;
+
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            color: $color-main;
+          }
+
+          .dark & {
+            color: $color-main;
+
+            &:hover {
+              color: $color-accent;
+            }
+          }
         }
       }
     }
@@ -80,6 +98,7 @@
       grid-column: 8 / 12;
       display: flex;
       justify-content: flex-start;
+      user-select: none;
       img {
         width: fit-content;
       }
@@ -98,8 +117,17 @@
       width: 6rem;
       height: 2px;
       background: #c4c4c4;
+      cursor: pointer;
+
+      .dark & {
+        background-color: $color-accent;
+      }
       &.active {
-        background: $color-gray-2;
+        background-color: $color-gray-2;
+
+        .dark & {
+          background-color: $color-main;
+        }
       }
     }
   }

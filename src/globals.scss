@@ -1,8 +1,9 @@
 $color-white: #fff;
 $color-black: #252525;
-$color-black-9: rgba($color-black, 0.9);
+$color-black-9: rgba($color-black, 0.97);
 
 $color-main: #deac7c;
+$color-accent: #998e76;
 
 $color-gray-1: #e5e5e5;
 $color-gray-2: #8d8d8d;
@@ -32,9 +33,9 @@ body {
   font-size: 1.6rem;
   color: $color-black;
 
-  /*   &.dark {
+  &.dark {
     color: $color-gray-1;
-  } */
+  }
 }
 
 ul {

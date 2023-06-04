@@ -60,11 +60,19 @@ const arrivals = [
 @import "@/globals";
 .section-arrivals {
   background-color: $color-white;
-  padding: 11rem 5rem 0;
+  padding: 11rem 5rem 3px; /* ?? */
+  height: 100%;
+
+  .dark & {
+    background-color: $color-black-9;
+  }
 
   h3 {
     font-family: $ff-garamond;
     font-size: 4rem;
+
+    .dark & {
+    }
   }
 
   .arrivals {
@@ -121,6 +129,20 @@ const arrivals = [
     border-bottom: 1px solid currentColor;
     max-width: 114rem;
     margin: 7rem auto;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      color: $color-black;
+    }
+
+    .dark & {
+      color: $bg-white;
+
+      &:hover {
+        color: $color-main;
+      }
+    }
   }
 }
 </style>

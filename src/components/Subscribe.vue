@@ -17,6 +17,10 @@
 @import "@/globals";
 .section-subscribe {
   background-color: $bg-white;
+
+  .dark & {
+    background-color: $color-black;
+  }
   .container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -44,10 +48,23 @@
         padding: 1.4rem 4.8rem;
         text-transform: uppercase;
         font-size: 1rem;
-        letter-spacing: 0.4 px;
+        letter-spacing: 0.4px;
         font-weight: 500;
         border: 1px solid $color-gray-2;
         font-weight: 700;
+
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          color: $color-gray-1;
+          background-color: $color-accent;
+        }
+        .dark & {
+          &:hover {
+            color: $color-gray-1;
+            background-color: $color-accent;
+          }
+        }
       }
     }
 

@@ -65,6 +65,10 @@ const testimonials = [
 .section-testimonials {
   padding: 9rem 5.5rem 4rem;
 
+  .dark & {
+    background-color: $color-black-9;
+  }
+
   h3 {
     font-size: 4.4rem;
     text-transform: capitalize;
@@ -89,10 +93,18 @@ const testimonials = [
       gap: 1.2rem;
       background-color: $color-gray-1;
       padding: 3rem;
+
+      .dark & {
+        background-color: $color-main;
+      }
       .info {
         display: flex;
         gap: 2rem;
         align-items: center;
+
+        .dark & {
+          color: $color-black;
+        }
         &__img {
           width: 5.6rem;
           height: 5.6rem;
@@ -105,6 +117,7 @@ const testimonials = [
           flex-direction: column;
           gap: 4px;
           justify-content: center;
+
           .name {
             font-size: 1.8rem;
             font-weight: 500;
@@ -128,6 +141,9 @@ const testimonials = [
       }
       .text {
         line-height: 1.5;
+        .dark & {
+          color: $color-black;
+        }
       }
     }
   }

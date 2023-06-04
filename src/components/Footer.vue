@@ -89,6 +89,10 @@
   padding: 6.5rem 15rem 5rem;
   background: $bg-white;
   border-top: 1px solid $color-gray-2;
+
+  .dark & {
+    background-color: $color-black-9;
+  }
   .container {
     display: flex;
     justify-content: space-between;
@@ -100,6 +104,9 @@
       font-weight: 700;
       font-size: 3rem;
       color: $color-gray-2;
+      .dark & {
+        color: $color-main;
+      }
     }
 
     ul {
@@ -108,6 +115,16 @@
       font-size: 1.2rem;
       text-transform: uppercase;
       li {
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          color: $color-gray-2;
+        }
+
+        &:active {
+          transform: translateY(3px);
+        }
       }
     }
 
@@ -117,6 +134,13 @@
 
       svg {
         fill: $color-gray-2;
+        cursor: pointer;
+        transition: all 0.15s ease-in-out;
+
+        &:hover {
+          transform: translateY(-3px) scale(1.05);
+          fill: $color-main;
+        }
       }
     }
   }
@@ -128,8 +152,6 @@
     font-size: 1.2rem;
     border-top: 1px solid rgba($color-gray-2, 0.5);
     padding: 3rem 0 0;
-    .cr {
-    }
 
     .figma {
       a {

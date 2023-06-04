@@ -37,6 +37,10 @@ header {
   padding: 5rem 15rem;
   background-color: $bg-white;
 
+  .dark & {
+    background-color: $color-black;
+  }
+
   .nav {
     display: flex;
     align-items: center;
@@ -47,11 +51,16 @@ header {
       flex-grow: 1;
       font-weight: 700;
       font-size: 3rem;
+
+      .dark & {
+        color: $color-main;
+      }
     }
 
     .links,
     .icons {
       display: flex;
+      transition: all 0.3s ease-in-out;
     }
 
     .links {
@@ -59,9 +68,13 @@ header {
       font-size: 1.4rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      font-weight: 5;
+      font-weight: 500;
       li {
+        transition: all 0.2s ease-in-out;
         cursor: pointer;
+        &:hover {
+          color: $color-main;
+        }
       }
     }
 
@@ -70,9 +83,13 @@ header {
       li {
         cursor: pointer;
         svg {
+          transition: all 0.2s ease-in-out;
           fill: $color-gray-2;
           height: 2rem;
           width: 2rem;
+          &:hover {
+            fill: $color-main;
+          }
         }
       }
     }

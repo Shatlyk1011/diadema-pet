@@ -25,10 +25,19 @@
   display: flex;
   align-items: end;
   justify-content: center;
+
+  .dark & {
+    background-color: $color-black-9;
+    margin-top: -1px;
+  }
   .cta {
     position: relative;
     background-color: $bg-white;
     width: 100vw;
+
+    .dark & {
+      background-color: $color-black-9;
+    }
 
     &::after {
       content: "";
@@ -40,6 +49,10 @@
       bottom: -4rem;
       left: 0;
       z-index: 100;
+
+      .dark & {
+        background-color: $color-black;
+      }
     }
 
     .grid {
@@ -61,6 +74,10 @@
           text-transform: uppercase;
           font-family: $ff-garamond;
           line-height: 1.1;
+
+          .dark & {
+            color: $color-main;
+          }
         }
 
         button {
@@ -69,10 +86,22 @@
           padding: 1.4rem 4.8rem;
           text-transform: uppercase;
           font-size: 1rem;
-          letter-spacing: 0.4 px;
+          letter-spacing: 0.4px;
           font-weight: 500;
-          border: 1px solid $color-gray-2;
+          border: 1px solid currentColor;
           font-weight: 700;
+          transition: all 0.2s ease-in-out;
+
+          &:hover,
+          .dark &:hover {
+            background-color: $color-accent;
+            color: $color-white;
+            border: 1px solid $color-accent;
+          }
+
+          .dark & {
+            color: $color-accent;
+          }
         }
       }
 
