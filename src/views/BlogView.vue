@@ -1,7 +1,5 @@
 <template>
   <main class="blog-view">
-    <Hero />
-
     <section class="blog">
       <h2>Наш блог</h2>
       <div class="container">
@@ -125,10 +123,11 @@ const posts = [
   h2 {
     font-family: $ff-garamond;
     font-size: 4rem;
+    text-align: center;
   }
 
   .blog {
-    padding: 11rem 5rem;
+    padding: 6rem 5rem;
 
     .dark & {
       background-color: $color-black-9;
@@ -143,12 +142,18 @@ const posts = [
       gap: 3rem;
       .item {
         color: $color-white;
-        text-align: left;
         position: relative;
         cursor: pointer;
         max-width: 36rem;
         min-height: 36rem;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+          rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        transition: all 0.2s ease-in-out;
 
+        &:hover {
+          box-shadow: rgba(0, 0, 0, 0.25) 5px 10px 20px,
+            rgba(0, 0, 0, 0.29) 5px 6px 6px;
+        }
         &:nth-child(4) {
           grid-column: 1 / span 2;
           max-width: 100%;

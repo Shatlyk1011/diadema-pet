@@ -7,7 +7,7 @@
             fashionable <br />
             hats
           </h2>
-          <button>промокод</button>
+          <button type="button">промокод</button>
         </div>
         <img src="./../assets/bg-hats.png" alt="girl with hats" />
       </div>

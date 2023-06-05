@@ -2,7 +2,7 @@
   <section class="section-arrivals align-center">
     <h2>Новая Коллекция</h2>
     <div class="arrivals">
-      <div class="wrap" v-for="(arrival, index) in arrivals" :key="index">
+      <div class="item" v-for="(arrival, index) in bb" :key="index">
         <div class="img">
           <img :src="arrival.imgUrl" alt="" />
         </div>
@@ -11,12 +11,18 @@
       </div>
     </div>
 
-    <div class="show-all">Показать все</div>
+    <div class="show-all" v-if="showAll" @click="showAll = !showAll">
+      Показать больше
+    </div>
+    <div class="show-all" v-if="!showAll" @click="showAll = !showAll">
+      Показать меньше
+    </div>
   </section>
 </template>
 
 <script setup>
-const arrivals = [
+import { ref, computed } from "vue"
+const arrivals = ref([
   {
     imgUrl:
       "https://images.unsplash.com/photo-1605733513597-a8f8341084e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1229&q=80",
@@ -53,7 +59,31 @@ const arrivals = [
     title: "Стиль из истории",
     price: 200,
   },
-]
+
+  {
+    imgUrl:
+      "https://images.unsplash.com/photo-1605733513597-a8f8341084e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1229&q=80",
+    title: "Стиль из истории",
+    price: 200,
+  },
+  {
+    imgUrl:
+      "https://img.freepik.com/free-photo/basic-white-sneakers-unisex-streetwear-fashion-shoot_53876-102115.jpg?w=996&t=st=1685812139~exp=1685812739~hmac=76d153a9ea424f668767ceaabd2635199017b9679a1e226321e7e5b88ecb9239",
+    title: "Стиль из истории",
+    price: 200,
+  },
+  {
+    imgUrl:
+      "https://images.unsplash.com/photo-1527523413008-edd47b9485b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    title: "Стиль из истории",
+    price: 200,
+  },
+])
+const showAll = ref(true)
+
+let bb = computed(() => {
+  return showAll.value ? arrivals.value.slice(0, 6) : arrivals.value
+})
 </script>
 
 <style lang="scss" scoped>
@@ -85,13 +115,27 @@ const arrivals = [
     row-gap: 8rem;
     margin-top: 5rem;
 
-    .wrap {
+    .item {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       height: 37rem;
       box-sizing: content-box;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 20px;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: rgba(0, 0, 0, 0.08) 5px 10px 20px,
+          rgba(0, 0, 0, 0.09) 5px 6px 6px;
+      }
+
+      &:active {
+        transform: translateY(3px) scale(0.98);
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 20px;
+      }
 
       .img {
         flex-grow: 1;

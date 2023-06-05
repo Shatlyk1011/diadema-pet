@@ -137,10 +137,14 @@
         </div>
       </div>
     </div>
+
+    <ArticleComments />
   </main>
 </template>
 
 <script setup>
+import ArticleComments from "@/components/ArticleComments.vue"
+
 const post = {
   topic: "Travel",
   comments: [1, 3, 4, 5, 6, 7, 8],
@@ -158,16 +162,27 @@ const post = {
 <style lang="scss" scoped>
 @import "@/globals";
 .blog-sample {
+  .dark & {
+    color: $color-white;
+    background-color: $color-black-9;
+  }
   .img-container {
+    .dark & {
+      background-color: $color-black-9;
+    }
+
     img {
       width: 100%;
-      max-height: 30%;
       object-fit: cover;
     }
   }
 
   .content {
-    padding: 4.2rem 25rem;
+    padding: 4.2rem 25rem 0;
+
+    .dark & {
+      background-color: $color-black-9;
+    }
     .topic {
       font-size: 1.2rem;
       color: $color-gray-2;

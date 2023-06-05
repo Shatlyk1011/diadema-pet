@@ -4,7 +4,7 @@
       <div class="wrap">
         <h4>Подпишитесь на наши новости</h4>
         <p class="subtitle">Подпишитесь на нашу еженедельную рассылку</p>
-        <button>подписаться</button>
+        <button type="button">подписаться</button>
       </div>
       <img src="./../assets/bg-cta.png" alt="girl" />
     </div>

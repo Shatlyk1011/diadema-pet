@@ -93,6 +93,14 @@ const testimonials = [
       gap: 1.2rem;
       background-color: $color-gray-1;
       padding: 3rem;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 20px;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: rgba(0, 0, 0, 0.08) 5px 10px 20px,
+          rgba(0, 0, 0, 0.09) 5px 6px 6px;
+      }
 
       .dark & {
         background-color: $color-main;

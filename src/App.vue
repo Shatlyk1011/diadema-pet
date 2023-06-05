@@ -2,7 +2,7 @@
   <Nav />
   <p>
     {{ isDark }}
-    <button @click="toggleDark()">toggle</button>
+    <button type="button" @click="toggleDark()">toggle</button>
   </p>
   <router-view />
   <Footer />
