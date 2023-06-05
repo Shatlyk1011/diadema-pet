@@ -5,7 +5,7 @@
         <h1>Женская компания</h1>
         <p>Повседневная коллекция</p>
 
-        <a href="" class="link">Узнать больше </a>
+        <a type="button" href="" class="link">Узнать больше </a>
       </div>
       <div class="img">
         <img src="./../assets/bg-main.png" alt="main girl" />

@@ -1,11 +1,11 @@
 <template>
-  <div class="homeView">
+  <main class="homeView">
     <Hero />
     <Arrivals />
     <CTA />
     <Testimonials />
     <Subscribe />
-  </div>
+  </main>
 </template>
 
 <script setup>

@@ -1,11 +1,17 @@
 <template>
   <header>
     <div class="nav">
-      <div class="logo">Diadema</div>
+      <div class="logo"><router-link to="/">Diadema</router-link></div>
 
       <ul class="links">
-        <li>Блог</li>
-        <li>Контакты</li>
+        <li>
+          <router-link class="link" :to="{ name: 'Blog' }">Блог</router-link>
+        </li>
+        <li>
+          <router-link class="link" :to="{ name: 'Blog' }"
+            >Контакты</router-link
+          >
+        </li>
       </ul>
 
       <ul class="icons">
@@ -52,8 +58,12 @@ header {
       font-weight: 700;
       font-size: 3rem;
 
-      .dark & {
-        color: $color-main;
+      a {
+        text-decoration: none;
+        color: inherit;
+        .dark & {
+          color: $color-main;
+        }
       }
     }
 
@@ -69,11 +79,19 @@ header {
       text-transform: uppercase;
       letter-spacing: 1px;
       font-weight: 500;
-      li {
-        transition: all 0.2s ease-in-out;
-        cursor: pointer;
-        &:hover {
-          color: $color-main;
+
+      li,
+      .link {
+        &:link,
+        &:visited {
+          text-decoration: none;
+          color: inherit;
+
+          transition: all 0.2s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            color: $color-main;
+          }
         }
       }
     }

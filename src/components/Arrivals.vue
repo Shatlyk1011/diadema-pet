@@ -1,6 +1,6 @@
 <template>
   <section class="section-arrivals align-center">
-    <h3>Новое Прибытие</h3>
+    <h2>Новая Коллекция</h2>
     <div class="arrivals">
       <div class="wrap" v-for="(arrival, index) in arrivals" :key="index">
         <div class="img">
@@ -67,7 +67,7 @@ const arrivals = [
     background-color: $color-black-9;
   }
 
-  h3 {
+  h2 {
     font-family: $ff-garamond;
     font-size: 4rem;
 

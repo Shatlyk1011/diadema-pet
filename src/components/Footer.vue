@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <div class="logo">Diadema</div>
+      <div class="logo"><router-link to="/">Diadema</router-link></div>
       <ul>
         <li>женщины</li>
         <li>мужщины</li>
@@ -104,8 +104,14 @@
       font-weight: 700;
       font-size: 3rem;
       color: $color-gray-2;
-      .dark & {
-        color: $color-main;
+
+      a {
+        color: $color-black;
+        text-decoration: none;
+
+        .dark & {
+          color: $color-main;
+        }
       }
     }
 
