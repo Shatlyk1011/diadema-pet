@@ -76,6 +76,7 @@
 
       <div class="figma">
         <a
+          target="_blank"
           style="cursor: pointer"
           href="https://www.figma.com/file/3d0X44Jgplsq7ywtKl3DG8/Diadema-UI-Kit?type=design&node-id=3-2"
           >ссылка на макет</a
