@@ -1,7 +1,5 @@
-# Vue 3 + Vite
+Vue 3 + Vite Pet проект - full responsive многостаничный сайт с dark-light modes.
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+live: https://diadema.netlify.app <br/>
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[figma template](https://www.figma.com/file/3d0X44Jgplsq7ywtKl3DG8/Diadema-UI-Kit?type=design&node-id=3-2)
