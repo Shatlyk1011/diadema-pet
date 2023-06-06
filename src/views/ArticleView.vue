@@ -1,5 +1,5 @@
 <template>
-  <main class="blog-sample">
+  <main class="article-view">
     <div class="img-container">
       <img src="./../assets/sample.jpg" alt="freedom girl" />
     </div>
@@ -144,24 +144,12 @@
 
 <script setup>
 import ArticleComments from "@/components/ArticleComments.vue"
-
-const post = {
-  topic: "Travel",
-  comments: [1, 3, 4, 5, 6, 7, 8],
-  //convert timestamp via date-fns
-  time: 20,
-  title: "Лили Вонг: ручная роспись и единственный в своем роде",
-  user: {
-    name: "ГАРРИ ПОТТЕР",
-    imgUrl:
-      "https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=466&q=80",
-  },
-}
+import { post } from "@/db"
 </script>
 
 <style lang="scss" scoped>
 @import "@/globals";
-.blog-sample {
+.article-view {
   .dark & {
     color: $color-white;
     background-color: $color-black-9;
@@ -173,12 +161,24 @@ const post = {
 
     img {
       width: 100%;
+      height: auto;
       object-fit: cover;
     }
   }
 
   .content {
     padding: 4.2rem 25rem 0;
+
+    @include respond(tab-land) {
+      padding: 3.2rem 10rem 0;
+    }
+
+    @include respond(tab-port) {
+      padding: 2.4rem 6rem 0;
+    }
+    @include respond(phone) {
+      padding: 2.4rem 4rem 0;
+    }
 
     .dark & {
       background-color: $color-black-9;
@@ -195,6 +195,11 @@ const post = {
       font-weight: 500;
       font-family: $ff-garamond;
       text-align: center;
+
+      @include respond(tab-port) {
+        font-size: 4rem;
+        line-height: 0.9;
+      }
     }
 
     .info {
@@ -244,6 +249,10 @@ const post = {
         margin: 0 auto;
         padding: 7.4rem 4rem;
         box-sizing: border-box;
+
+        @include respond(tab-land) {
+          padding: 5rem 0;
+        }
       }
 
       .quote {
@@ -272,6 +281,17 @@ const post = {
         color: $color-gray-2;
         font-size: 1.4rem;
 
+        @include respond(tab-land) {
+          margin-top: 2.4rem;
+          padding: 2rem 0 4rem 0;
+        }
+
+        @include respond(smallest) {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
         .user,
         .links {
           display: flex;
@@ -283,6 +303,10 @@ const post = {
             width: 4.2rem;
             height: 4.2rem;
             border-radius: 100%;
+
+            @include respond(smallest) {
+              order: 2;
+            }
           }
 
           p {
@@ -294,6 +318,9 @@ const post = {
         .links {
           p {
             margin-right: 6px;
+            @include respond(smallest) {
+              font-size: 1.4rem;
+            }
           }
 
           img {

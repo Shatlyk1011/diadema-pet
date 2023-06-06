@@ -35,35 +35,21 @@
 </template>
 
 <script setup>
-const testimonials = [
-  {
-    imgUrl:
-      "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z2lybCUyMGZhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-    name: "Луиза Рамирес",
-    socialLink: "@ramirezzz",
-    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium quae asperiores inventore omnis placeat minus nisi explicabo nemo ipsum.",
-  },
-  {
-    imgUrl:
-      "https://images.unsplash.com/photo-1553514029-1318c9127859?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80",
-    name: "Джози Норман",
-    socialLink: "@josienorman",
-    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium quae asperiores inventore omnis placeat minus nisi explicabo nemo ipsum.",
-  },
-  {
-    imgUrl:
-      "https://images.unsplash.com/photo-1605017661025-104f4dbb650f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80",
-    name: "Светлана Николаевна",
-    socialLink: "@sup_borsh",
-    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium quae asperiores inventore omnis placeat minus nisi explicabo nemo ipsum.",
-  },
-]
+import { testimonials } from "@/db"
 </script>
 
 <style lang="scss" scoped>
 @import "@/globals";
 .section-testimonials {
   padding: 9rem 5.5rem 4rem;
+
+  @include respond(tab-land) {
+    padding: 7.5rem 3rem 3rem;
+  }
+
+  @include respond(tab-port) {
+    padding: 6rem 2rem 2rem;
+  }
 
   .dark & {
     background-color: $color-black-9;
@@ -73,11 +59,24 @@ const testimonials = [
     font-size: 4.4rem;
     text-transform: capitalize;
     font-family: $ff-garamond;
+
+    @include respond(tab-port) {
+      font-size: 3.2rem;
+    }
   }
 
   .subtitle {
     color: $color-gray-2;
     margin-top: 2.4rem;
+
+    @include respond(tab-land) {
+      margin-top: 2rem;
+    }
+
+    @include respond(tab-port) {
+      font-size: 1.4rem;
+      margin-top: 1rem;
+    }
   }
 
   .testimonials {
@@ -87,6 +86,16 @@ const testimonials = [
     text-align: left;
     max-width: 144rem;
     margin: 5rem auto 0;
+    @include respond(tab-land) {
+      margin-top: 3rem;
+      gap: 2rem;
+    }
+    @include respond(tab-port) {
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
     .testimonial {
       display: flex;
       flex-direction: column;
@@ -95,6 +104,13 @@ const testimonials = [
       padding: 3rem;
       box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 20px;
       transition: all 0.2s ease-in-out;
+
+      @include respond(tab-land) {
+        padding: 2rem;
+      }
+
+      @include respond(tab-port) {
+      }
 
       &:hover {
         transform: scale(1.02);

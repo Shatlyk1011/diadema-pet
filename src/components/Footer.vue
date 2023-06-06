@@ -75,13 +75,14 @@
       <div class="cr">&copy; 2023 все права защищены.</div>
 
       <div class="figma">
-        <a href="">ссылка на макет</a>
+        <a
+          href="https://www.figma.com/file/3d0X44Jgplsq7ywtKl3DG8/Diadema-UI-Kit"
+          >ссылка на макет</a
+        >
       </div>
     </div>
   </footer>
 </template>
-
-<script setup></script>
 
 <style lang="scss">
 @import "@/globals";
@@ -89,6 +90,18 @@
   padding: 6.5rem 15rem 5rem;
   background: $bg-white;
   border-top: 1px solid $color-gray-2;
+
+  @include respond(tab-land) {
+    padding: 3rem 7rem;
+  }
+
+  @include respond(tab-land) {
+    padding: 2.4rem 5rem;
+  }
+
+  @include respond(smallest) {
+    padding: 2rem;
+  }
 
   .dark & {
     background-color: $color-black-9;
@@ -99,6 +112,18 @@
     gap: 2rem;
     align-items: center;
     padding-bottom: 4.2rem;
+    @include respond(tab-land) {
+      padding-bottom: 3rem;
+    }
+
+    @include respond(tab-land) {
+      gap: 3rem;
+      flex-direction: column;
+    }
+
+    @include respond(smallest) {
+      gap: 2rem;
+    }
 
     .logo {
       font-weight: 700;
@@ -120,6 +145,18 @@
       gap: 4rem;
       font-size: 1.2rem;
       text-transform: uppercase;
+      @include respond(tab-land) {
+        gap: 2.4rem;
+      }
+
+      @include respond(tab-port) {
+        gap: 1rem;
+      }
+
+      @include respond(smallest) {
+        flex-direction: column;
+        align-items: center;
+      }
       li {
         cursor: pointer;
         transition: all 0.2s ease-in-out;
@@ -137,6 +174,10 @@
     .social {
       display: flex;
       gap: 3rem;
+
+      @include respond(tab-land) {
+        gap: 2rem;
+      }
 
       svg {
         fill: $color-gray-2;

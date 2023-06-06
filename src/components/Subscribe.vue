@@ -11,8 +11,6 @@
   </section>
 </template>
 
-<script setup></script>
-
 <style lang="scss" scoped>
 @import "@/globals";
 .section-subscribe {
@@ -24,6 +22,13 @@
   .container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    @include respond(phone) {
+      padding: 2rem;
+    }
+
+    @include respond(smallest) {
+      grid-template-columns: 1fr;
+    }
 
     .wrap {
       grid-column: 3 / span 5;
@@ -32,14 +37,33 @@
       justify-content: center;
       align-items: flex-start;
       gap: 2.4rem;
+
+      @include respond(tab-land) {
+        grid-column: 2 / span 5;
+      }
+
+      @include respond(smallest) {
+        align-items: center;
+        gap: 1.5rem;
+        text-align: center;
+      }
+
       h4 {
         font-size: 4.2rem;
         font-family: $ff-garamond;
+
+        @include respond(tab-port) {
+          font-size: 3.2rem;
+        }
       }
 
       p {
         font-size: 1.8rem;
         color: $color-gray-2;
+
+        @include respond(tab-port) {
+          font-size: 1.6rem;
+        }
       }
 
       button {
@@ -55,6 +79,9 @@
 
         transition: all 0.2s ease-in-out;
 
+        @include respond(tab-port) {
+          padding: 1rem 2.4rem;
+        }
         &:hover {
           color: $color-gray-1;
           background-color: $color-accent;
@@ -70,6 +97,14 @@
 
     img {
       grid-column: 8 / -1;
+
+      @include respond(tab-land) {
+        grid-column: 7 / -1;
+      }
+
+      @include respond(tab-port) {
+        width: 100%;
+      }
     }
   }
 }

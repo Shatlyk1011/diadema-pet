@@ -22,63 +22,8 @@
 
 <script setup>
 import { ref, computed } from "vue"
-const arrivals = ref([
-  {
-    imgUrl:
-      "https://images.unsplash.com/photo-1605733513597-a8f8341084e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1229&q=80",
-    title: "Стиль из истории",
-    price: 200,
-  },
-  {
-    imgUrl:
-      "https://img.freepik.com/free-photo/pink-canvas-sneakers-with-polka-dot-unisex-footwear-fashion_53876-106039.jpg?w=996&t=st=1685809743~exp=1685810343~hmac=61b0700d8adb262643d749e6aa1320835de0380c8d0dfb5e48b9ce45daecb3e9",
-    title: "Стиль из истории",
-    price: 200,
-  },
-  {
-    imgUrl:
-      "https://img.freepik.com/free-photo/fashion-portrait-young-elegant-woman_1328-2743.jpg?w=996&t=st=1685809797~exp=1685810397~hmac=c9d6d3c2855a2a99c92a83261022946c97a151cb5534e0c4f8e806abb9eb1f9f",
-    title: "Стиль из истории",
-    price: 200,
-  },
-  {
-    imgUrl:
-      "https://img.freepik.com/free-photo/basic-white-sneakers-unisex-streetwear-fashion-shoot_53876-102115.jpg?w=996&t=st=1685812139~exp=1685812739~hmac=76d153a9ea424f668767ceaabd2635199017b9679a1e226321e7e5b88ecb9239",
-    title: "Стиль из истории",
-    price: 200,
-  },
-  {
-    imgUrl:
-      "https://images.unsplash.com/photo-1566150902887-9679ecc155ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    title: "Стиль из истории",
-    price: 200,
-  },
-  {
-    imgUrl:
-      "https://images.unsplash.com/photo-1527523413008-edd47b9485b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    title: "Стиль из истории",
-    price: 200,
-  },
+import { arrivals } from "@/db"
 
-  {
-    imgUrl:
-      "https://images.unsplash.com/photo-1605733513597-a8f8341084e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1229&q=80",
-    title: "Стиль из истории",
-    price: 200,
-  },
-  {
-    imgUrl:
-      "https://img.freepik.com/free-photo/basic-white-sneakers-unisex-streetwear-fashion-shoot_53876-102115.jpg?w=996&t=st=1685812139~exp=1685812739~hmac=76d153a9ea424f668767ceaabd2635199017b9679a1e226321e7e5b88ecb9239",
-    title: "Стиль из истории",
-    price: 200,
-  },
-  {
-    imgUrl:
-      "https://images.unsplash.com/photo-1527523413008-edd47b9485b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    title: "Стиль из истории",
-    price: 200,
-  },
-])
 const showAll = ref(true)
 
 let bb = computed(() => {
@@ -90,8 +35,17 @@ let bb = computed(() => {
 @import "@/globals";
 .section-arrivals {
   background-color: $color-white;
-  padding: 11rem 5rem 3px; /* ?? */
+  padding: 11rem 5rem 7rem;
   height: 100%;
+  box-sizing: border-box;
+
+  @include respond(tab-land) {
+    padding: 6rem 3rem 4rem;
+  }
+
+  @include respond(tab-port) {
+    padding: 4rem 2rem 3rem;
+  }
 
   .dark & {
     background-color: $color-black-9;
@@ -100,9 +54,6 @@ let bb = computed(() => {
   h2 {
     font-family: $ff-garamond;
     font-size: 4rem;
-
-    .dark & {
-    }
   }
 
   .arrivals {
@@ -110,10 +61,22 @@ let bb = computed(() => {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 37rem);
     max-width: 114rem;
-    margin: 0 auto;
+    margin: 5rem auto 0;
     column-gap: 4.5rem;
     row-gap: 8rem;
-    margin-top: 5rem;
+
+    @include respond(tab-land) {
+      column-gap: 2.4rem;
+      row-gap: 5rem;
+    }
+
+    @include respond(tab-port) {
+      margin: 3rem auto 0;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 30rem);
+      column-gap: 2rem;
+      row-gap: 4rem;
+    }
 
     .item {
       display: flex;
@@ -125,11 +88,16 @@ let bb = computed(() => {
       box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 20px;
       transition: all 0.2s ease-in-out;
       cursor: pointer;
+      @include respond(tab-port) {
+        height: 30rem;
+      }
 
-      &:hover {
-        transform: scale(1.02);
-        box-shadow: rgba(0, 0, 0, 0.08) 5px 10px 20px,
-          rgba(0, 0, 0, 0.09) 5px 6px 6px;
+      @media (hover) {
+        &:hover {
+          transform: scale(1.02);
+          box-shadow: rgba(0, 0, 0, 0.08) 5px 10px 20px,
+            rgba(0, 0, 0, 0.09) 5px 6px 6px;
+        }
       }
 
       &:active {
@@ -172,9 +140,19 @@ let bb = computed(() => {
     border-top: 1px solid currentColor;
     border-bottom: 1px solid currentColor;
     max-width: 114rem;
-    margin: 7rem auto;
+    margin: 7rem auto 0;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+
+    @include respond(tab-land) {
+      margin-top: 4rem;
+    }
+
+    @include respond(tab-land) {
+      margin-top: 3rem;
+      padding: 1rem 0;
+      font-size: 1rem;
+    }
 
     &:hover {
       color: $color-black;

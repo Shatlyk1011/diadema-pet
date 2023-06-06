@@ -30,28 +30,7 @@
 </template>
 
 <script setup>
-const comments = [
-  {
-    imgUrl:
-      "https://images.unsplash.com/photo-1603777953703-c2c6484b0ee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
-    name: "Benjamin Franklin",
-    time: "Feb 12, 2017 8:24PM",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur repellat ea consequuntur, eum cupiditate eligendi deserunt rerum quisquam expedita a veniam ab repellendus dolor ad vitae optio odiovoluptas saepe.",
-  },
-  {
-    imgUrl:
-      "https://sun1-84.userapi.com/s/v1/if1/yZmFw4gOUyS9IrOO5x9T9LPM1215vKouKx6XdnBIatDfntsPXyA6LnVqkgqwBePTNza8UvYR.jpg?size=200x200&quality=96&crop=127,0,240,240&ava=1",
-    name: " Antonio Margareti ",
-    time: "Feb 12, 2017 8:24PM",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur repellat ea consequuntur, eum cupiditate eligendi deserunt rerum quisquam expedita a veniam ab repellendus dolor ad vitae optio odiovoluptas saepe.",
-  },
-]
-
-let user = {
-  name: "Ибрагим вам о чем нибдуь говорит?",
-  imgUrl:
-    "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-}
+import { comments, user } from "@/db"
 </script>
 
 <style lang="scss" scoped>
@@ -59,6 +38,10 @@ let user = {
 
 .section-comments {
   padding: 4.2rem 0;
+
+  @include respond(tab-port) {
+    padding: 4.2rem 2rem;
+  }
   .dark & {
     background-color: $color-black;
   }
@@ -71,10 +54,17 @@ let user = {
     padding-bottom: 10rem;
     margin: 0 auto;
 
+    @include respond(tab-land) {
+      padding-bottom: 6rem;
+    }
+
     h3 {
       font-size: 3rem;
       text-align: center;
       margin-bottom: 4rem;
+      @include respond(tab-land) {
+        margin-bottom: 3rem;
+      }
     }
 
     .comment {
@@ -83,6 +73,10 @@ let user = {
       align-items: start;
       &:not(:last-child) {
         margin-bottom: 6rem;
+
+        @include respond(tab-land) {
+          margin-bottom: 4rem;
+        }
       }
 
       img {

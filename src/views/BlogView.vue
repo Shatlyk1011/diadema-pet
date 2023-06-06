@@ -39,82 +39,7 @@
 </template>
 
 <script setup>
-import Hero from "@/components/Hero.vue"
-
-const posts = [
-  {
-    topic: "Travel",
-    title: "Для ежедневного исправления советов по покупкам, идей нарядов.",
-    text: "Делайте покупки напрямую у наших любимых независимых брендов и винтажных бутиков.",
-    comments: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    time: 9,
-    imgUrl:
-      "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  },
-  {
-    topic: "Travel",
-    title: "Для ежедневного исправления нарядов.",
-    text: "Делайте покупки напрямую у наших любимых независимых брендов и винтажных бутиков.",
-    comments: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    time: 9,
-    imgUrl:
-      "https://images.unsplash.com/photo-1682686581030-7fa4ea2b96c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
-  },
-  {
-    topic: "Travel",
-    title: "Для ежедневного исправления советов по покупкам, идей нарядов.",
-    text: "Делайте покупки напрямую у наших любимых независимых брендов и винтажных бутиков.",
-    comments: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    time: 9,
-    imgUrl:
-      "https://images.unsplash.com/photo-1685703206366-d514f27076ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80",
-  },
-  {
-    topic: "Travel",
-    title: "Для ежедневного исправления советов по покупкам, идей нарядов.",
-    text: "Делайте покупки напрямую у наших любимых независимых брендов и винтажных бутиков.",
-    comments: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    time: 9,
-    imgUrl:
-      "https://images.unsplash.com/photo-1682685795557-976f03aca7b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80",
-  },
-  {
-    topic: "Travel",
-    title: "Для ежедневного исправления советов по покупкам, идей нарядов.",
-    text: "Делайте покупки напрямую у наших любимых независимых брендов и винтажных бутиков.",
-    comments: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    time: 9,
-    imgUrl:
-      "https://images.unsplash.com/photo-1666870747605-cca30ed154c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80",
-  },
-  {
-    topic: "Travel",
-    title: "Для ежедневного исправления советов по покупкам, идей нарядов.",
-    text: "Делайте покупки напрямую у наших любимых независимых брендов и винтажных бутиков.",
-    comments: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    time: 9,
-    imgUrl:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80",
-  },
-  {
-    topic: "Travel",
-    title: "Для ежедневного исправления советов по покупкам, идей нарядов.",
-    text: "Делайте покупки напрямую у наших любимых независимых брендов и винтажных бутиков.",
-    comments: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    time: 9,
-    imgUrl:
-      "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  },
-  {
-    topic: "Travel",
-    title: "Для ежедневного исправления советов по покупкам, идей нарядов.",
-    text: "Делайте покупки напрямую у наших любимых независимых брендов и винтажных бутиков.",
-    comments: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    time: 9,
-    imgUrl:
-      "https://images.unsplash.com/photo-1507371341162-763b5e419408?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=739&q=80",
-  },
-]
+import { posts } from "@/db"
 </script>
 
 <style lang="scss" scoped>
@@ -124,10 +49,26 @@ const posts = [
     font-family: $ff-garamond;
     font-size: 4rem;
     text-align: center;
+
+    @include respond(tab-port) {
+      font-size: 3rem;
+    }
   }
 
   .blog {
     padding: 6rem 5rem;
+
+    @include respond(tab-land) {
+      padding: 4rem 3rem;
+    }
+
+    @include respond(tab-port) {
+      padding: 3rem 2rem;
+    }
+
+    @include respond(smallest) {
+      padding: 2rem;
+    }
 
     .dark & {
       background-color: $color-black-9;
@@ -136,10 +77,18 @@ const posts = [
     .container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-
       max-width: 114rem;
       margin: 5rem auto 0;
       gap: 3rem;
+
+      @include respond(tab-land) {
+        gap: 2rem;
+      }
+
+      @include respond(tab-port) {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 3rem;
+      }
       .item {
         color: $color-white;
         position: relative;
@@ -150,6 +99,13 @@ const posts = [
           rgba(0, 0, 0, 0.23) 0px 6px 6px;
         transition: all 0.2s ease-in-out;
 
+        @include respond(tab-land) {
+          min-height: 30rem;
+        }
+
+        @include respond(smallest) {
+        }
+
         &:hover {
           box-shadow: rgba(0, 0, 0, 0.25) 5px 10px 20px,
             rgba(0, 0, 0, 0.29) 5px 6px 6px;
@@ -157,6 +113,10 @@ const posts = [
         &:nth-child(4) {
           grid-column: 1 / span 2;
           max-width: 100%;
+
+          @include respond(tab-port) {
+            grid-column: auto;
+          }
         }
 
         .content {
@@ -170,6 +130,15 @@ const posts = [
           z-index: 10;
           text-decoration: none;
           color: inherit;
+
+          @include respond(tab-land) {
+            padding: 3rem;
+            gap: 0.8rem;
+          }
+
+          @include respond(smallest) {
+            padding: 1.6rem;
+          }
           .topic {
             font-size: 1rem;
             font-weight: 700;
@@ -188,11 +157,16 @@ const posts = [
             overflow: hidden;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
+
+            @include respond(tab-land) {
+              margin-top: 2.4rem;
+            }
           }
 
           .text {
             font-size: 1.8rem;
             line-height: 1.6;
+
             // show max 3 lines
             display: -webkit-box;
             overflow: hidden;
@@ -215,21 +189,6 @@ const posts = [
               align-items: center;
               justify-content: center;
               gap: 1rem;
-            }
-            .comments {
-              img {
-              }
-
-              span {
-              }
-            }
-
-            .time {
-              img {
-              }
-
-              span {
-              }
             }
           }
         }

@@ -15,6 +15,34 @@ $color-red: #ff254e;
 $ff-mserrat: "Montserrat", sans-serif;
 $ff-garamond: "EB Garamond", serif;
 
+@mixin respond($breakpoint) {
+  @if $breakpoint == smallest {
+    @media only screen and (max-width: 25em) {
+      @content;
+    } //400px
+  }
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 41em) {
+      @content;
+    } //656
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 54em) {
+      @content;
+    } //864px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 68.75em) {
+      @content;
+    } //1100px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 120em) {
+      @content;
+    } //1920px
+  }
+}
+
 *,
 *:before,
 *:after {
@@ -27,11 +55,25 @@ html {
   font-size: 62.5%;
   font-family: $ff-mserrat;
   box-sizing: border-box;
+  overflow-x: hidden;
+
+  @include respond(big-desktop) {
+    font-size: 76.25%;
+  }
+
+  @include respond(phone) {
+    font-size: 50%;
+  }
+
+  @include respond(smallest) {
+    font-size: 43.5%;
+  }
 }
 
 body {
   font-size: 1.6rem;
   color: $color-black;
+  overflow-x: hidden;
 
   &.dark {
     color: $color-gray-1;
@@ -45,31 +87,3 @@ ul {
 .align-center {
   text-align: center;
 }
-
-/* @mixin respond($breakpoint) {
-  @if $breakpoint == smallest {
-    @media only screen and (max-width: 27.5em) {
-      @content;
-    } //440px
-  }
-  @if $breakpoint == phone {
-    @media only screen and (max-width: 46.25em) {
-      @content;
-    } //740px
-  }
-  @if $breakpoint == tab-port {
-    @media only screen and (max-width: 62.5em) {
-      @content;
-    } //1000px
-  }
-  @if $breakpoint == tab-land {
-    @media only screen and (max-width: 81em) {
-      @content;
-    } //~1300px
-  }
-  @if $breakpoint == big-desktop {
-    @media only screen and (min-width: 120em) {
-      @content;
-    } //1920px
-  }
-} */

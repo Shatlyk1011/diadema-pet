@@ -1,26 +1,63 @@
 <template>
   <section class="section-hero">
-    <div class="hero">
-      <div class="content">
-        <h1>Женская компания</h1>
-        <p>Повседневная коллекция</p>
+    <swiper
+      :modules="[Pagination, Autoplay]"
+      :pagination="paginationConfig"
+      :autoplay="{ delay: 4000, disableOnInteraction: false }"
+    >
+      <swiper-slide class="hero">
+        <div class="content">
+          <h1>Женская компания</h1>
+          <p>Повседневная коллекция</p>
 
-        <a type="button" href="" class="link">Узнать больше </a>
-      </div>
-      <div class="img">
-        <img src="./../assets/bg-main.png" alt="main girl" />
-      </div>
-    </div>
+          <a type="button" href="" class="link">Узнать больше </a>
+        </div>
+        <div class="img">
+          <img src="./../assets/bg-main.png" alt="main girl" />
+        </div>
+      </swiper-slide>
 
-    <div class="pagination">
-      <div class="page active"></div>
-      <div class="page"></div>
-      <div class="page"></div>
-    </div>
+      <swiper-slide class="hero">
+        <div class="content">
+          <h1>Женская коллекция</h1>
+          <p>Повседневная коллекция</p>
+
+          <a type="button" href="" class="link">Узнать больше </a>
+        </div>
+        <div class="img">
+          <img src="./../assets/bg-main.png" alt="main girl" />
+        </div>
+      </swiper-slide>
+
+      <swiper-slide class="hero">
+        <div class="content">
+          <h1>Женская девушка</h1>
+          <p>Повседневная коллекция</p>
+
+          <a type="button" href="" class="link">Узнать больше </a>
+        </div>
+        <div class="img">
+          <img src="./../assets/bg-main.png" alt="main girl" />
+        </div>
+      </swiper-slide>
+    </swiper>
+    <div class="pagination"></div>
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { Pagination, Autoplay } from "swiper"
+import { Swiper, SwiperSlide } from "swiper/vue"
+import "swiper/css"
+import "swiper/css/pagination"
+
+const paginationConfig = {
+  el: ".pagination",
+  bulletClass: "page",
+  bulletActiveClass: "active",
+  clickable: true,
+}
+</script>
 
 <style lang="scss">
 @import "@/globals";
@@ -34,11 +71,11 @@
   .dark & {
     background-color: $color-black;
   }
+
   .hero {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
-    max-width: 144rem;
     margin: 0 auto;
 
     .content {
@@ -47,9 +84,21 @@
       grid-column: 3 / span 5;
       margin-bottom: 4rem;
 
+      @include respond(tab-port) {
+        grid-column: 2 / span 6;
+      }
+
       h1 {
         font-family: $ff-garamond;
         font-size: 6rem;
+
+        @include respond(tab-land) {
+          font-size: 5rem;
+        }
+
+        @include respond(tab-port) {
+          font-size: 4rem;
+        }
         .dark & {
           color: $color-main;
         }
@@ -100,24 +149,37 @@
       justify-content: flex-start;
       user-select: none;
       img {
-        width: fit-content;
+        @include respond(tab-port) {
+          width: 100%;
+        }
       }
     }
   }
 
   .pagination {
+    text-align: center;
+    width: 100%;
+    z-index: 22;
     position: absolute;
-    display: flex;
-    gap: 1rem;
-    bottom: 4rem;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 4.5rem;
+
+    @include respond(tab-land) {
+      bottom: 3rem;
+    }
+    @include respond(tab-port) {
+      bottom: 1.5rem;
+    }
 
     .page {
+      display: inline-block;
       width: 6rem;
       height: 2px;
       background: #c4c4c4;
       cursor: pointer;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
 
       .dark & {
         background-color: $color-accent;
